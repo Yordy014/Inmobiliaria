@@ -3,13 +3,19 @@
     <words>
       <w>abrir</w>
       <w>boton</w>
+      <w>clave</w>
+      <w>estatus</w>
       <w>guardar</w>
       <w>hecho</w>
       <w>hola</w>
+      <w>identificacion</w>
       <w>mensaje</w>
       <w>mundo</w>
       <w>nombre</w>
       <w>parametros</w>
+      <w>telefono</w>
+      <w>tipo</w>
+      <w>usuario</w>
       <w>visualizar</w>
     </words>
   </dictionary>

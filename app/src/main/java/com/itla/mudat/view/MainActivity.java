@@ -1,4 +1,4 @@
-package com.itla.mudat;
+package com.itla.mudat.view;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import com.itla.mudat.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        nombre = findViewById(R.id.txtNombre);
+        nombre = findViewById(R.id.textNombre);
         guardar = findViewById(R.id.btnGuardar);
 
         guardar.setOnClickListener(new View.OnClickListener() {
