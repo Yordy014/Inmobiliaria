@@ -1,17 +1,18 @@
 package com.itla.mudat.view;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.itla.mudat.R;
+import com.itla.mudat.dao.UsuarioDbo;
 import com.itla.mudat.entity.clsUsuario;
 import com.itla.mudat.entity.enumTipoUsuario;
+
+import java.util.List;
 
 public class RegistroUsuario extends AppCompatActivity {
 
@@ -23,6 +24,9 @@ public class RegistroUsuario extends AppCompatActivity {
     public EditText estatus;
     public EditText identificacion;
     public Button guardar;
+    public Button listar;
+
+    UsuarioDbo usuarioDbo;
 
    /* public TextView nombre1;
     public TextView telefono1;
@@ -45,6 +49,8 @@ public class RegistroUsuario extends AppCompatActivity {
         estatus = findViewById(R.id.txtEstatus);
         telefono = findViewById(R.id.txtTelefono);
 
+        usuarioDbo = new UsuarioDbo(this);
+
        /* nombre1 = findViewById(R.id.textNombre);
         identificacion1 = findViewById(R.id.textIdentificacion);
         tipoUsuario1 = findViewById(R.id.textTipoUsuario);
@@ -65,10 +71,26 @@ public class RegistroUsuario extends AppCompatActivity {
                 usuario.setTipoUsuario(enumTipoUsuario.CLIENTE);
                 usuario.setEmail(email.getText().toString());
                 usuario.setClave(clave.getText().toString());
-                usuario.setEstatus(true);
+              //  usuario.setEstatus(true);
                 usuario.setTelefono(telefono.getText().toString());
 
-                Log.i("Registro Usuario", usuario.toString());
+                Log.i("Registrando Usuario: ", usuario.toString());
+                usuarioDbo.crear(usuario);
+
+            }
+        });
+
+        listar = findViewById(R.id.btnListar);
+
+        listar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                List<clsUsuario> usuarios = usuarioDbo.buscar();
+
+                for (clsUsuario u: usuarios){
+                    Log.i("", u.toString());
+                }
             }
         });
 
