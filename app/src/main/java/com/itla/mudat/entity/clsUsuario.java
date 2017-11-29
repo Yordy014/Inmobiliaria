@@ -9,7 +9,7 @@ public class clsUsuario {
     String email;
     String telefono;
     String clave;
-    boolean estatus;
+    //boolean estatus;
 
     public Integer getIdUsuario() {
         return idUsuario;
@@ -39,9 +39,9 @@ public class clsUsuario {
         return clave;
     }
 
-    public boolean isEstatus() {
+    /*public boolean isEstatus() {
         return estatus;
-    }
+    }*/
 
     public void setIdUsuario(Integer idUsuario) {
         this.idUsuario = idUsuario;
@@ -71,9 +71,9 @@ public class clsUsuario {
         this.clave = clave;
     }
 
-    public void setEstatus(boolean estatus) {
+   /* public void setEstatus(boolean estatus) {
         this.estatus = estatus;
-    }
+    }*/
 
     @Override
     public String toString() {
@@ -85,7 +85,7 @@ public class clsUsuario {
                 ", email='" + email + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", clave='" + clave + '\'' +
-                ", estatus=" + estatus +
+                //", estatus=" + estatus +
                 '}';
     }
 }

@@ -40,13 +40,13 @@ public class UsuarioDbo {
 
         SQLiteDatabase db = con.getReadableDatabase();
 
-        String columnas[] = new String[] {"id_usuario","nombre","tipo_usuario","identificacion","email","telefono","clave"};//,"estatus"};
+        String columnas[] = new String[] {"nombre","tipo_usuario","identificacion","email","telefono","clave"};//,"estatus"};
 
         Cursor cursor = db.query("usuario", columnas, null, null,null, null,null);
 
         cursor.moveToFirst();
 
-        while (!cursor.isAfterLast()){
+        while(!cursor.isAfterLast()){
             clsUsuario u = new clsUsuario();
             u.setIdUsuario(cursor.getInt(cursor.getColumnIndex("id_usuario")));
             u.setNombre(cursor.getString(cursor.getColumnIndex("nombre")));
@@ -54,7 +54,7 @@ public class UsuarioDbo {
             u.setIdentificacion(cursor.getString(cursor.getColumnIndex("identificacion")));
             u.setEmail(cursor.getString(cursor.getColumnIndex("email")));
             u.setTelefono(cursor.getString(cursor.getColumnIndex("telefono")));
-            u.setClave(cursor.getString(cursor.getColumnIndex("estatus")));
+            u.setClave(cursor.getString(cursor.getColumnIndex("clave")));
            // u.setEstatus(cursor.getInt(cursor.getColumnIndex("estatus")));
 
             cursor.moveToNext();

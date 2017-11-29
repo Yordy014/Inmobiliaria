@@ -2,13 +2,12 @@ package com.itla.mudat.dao;
 
 
 public class SqlHelperSchema {
-    public static final String USUARIO_TABLE = "CREATE TABLE USUARIO ( ID_USUARIO INTEGER, " +
-                                                                        "NOMBRE TEXT, " +
-                                                                        "TIPO_USUARIO TEXT, " +
-                                                                        "IDENTIFICACION TEXT, " +
-                                                                        "EMAIL TEXT, " +
-                                                                        "CLAVE TEXT, " +
-                                                                        "TELEFONO TEXT, " +
+    public static final String USUARIO_TABLE = "CREATE TABLE USUARIO ( id_usuario INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                                                                        "nombre TEXT, " +
+                                                                        "tipo_usuario TEXT, " +
+                                                                        "identificacion TEXT, " +
+                                                                        "email TEXT, " +
+                                                                        "clave TEXT, " +
+                                                                        "telefono TEXT )";
                                                                         //"ESTATUS TEXT, " +
-                                                                        "PRIMARY KEY(ID_USUARIO))";
 }

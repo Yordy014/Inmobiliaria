@@ -46,7 +46,7 @@ public class RegistroUsuario extends AppCompatActivity {
         tipoUsuario = findViewById(R.id.txtTipoUsuario);
         email = findViewById(R.id.txtEmail);
         clave = findViewById(R.id.txtClave);
-        estatus = findViewById(R.id.txtEstatus);
+        //estatus = findViewById(R.id.txtEstatus);
         telefono = findViewById(R.id.txtTelefono);
 
         usuarioDbo = new UsuarioDbo(this);
