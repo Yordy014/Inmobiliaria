@@ -10,4 +10,20 @@ public class SqlHelperSchema {
                                                                         "clave TEXT, " +
                                                                         "telefono TEXT )";
                                                                         //"ESTATUS TEXT, " +
+
+    public static final String CATEGORIA_TABLE = "CREATE TABLE CATEGORIA (id_categoria INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                                                                            "descripcion TEXT)";
+
+    public static final String ANUNCIO_TABLE = "CREATE TABLE ANUNCIO ( id_anuncio INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                                                                        "titulo TEXT, " +
+                                                                        "detalle TEXT, " +
+                                                                        "precio INTEGER, " +
+                                                                        "condicion TEXT, " +
+                                                                        "fecha TEXT, " +
+                                                                        "categoria INTEGER, " +
+                                                                        "usuario INTEGER, " +
+                                                                        "ubicacion TEXT, " +
+                                                                        "PRIMARY KEY(`ID_ANUNCIO`), " +
+                                                                        "FOREIGN KEY(categoria) REFERENCES CATEGORIA(id_categoria), " +
+                                                                        "FOREIGN KEY(usuario) REFERENCES USUARIO(id_usuario)";
 }

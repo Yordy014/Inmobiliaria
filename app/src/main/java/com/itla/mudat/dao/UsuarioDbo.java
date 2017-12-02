@@ -31,7 +31,6 @@ public class UsuarioDbo {
         //cv.put("estatus", user.isEstatus());
 
         db.insert("usuario", null,cv);
-
         db.close();
     }
 
@@ -40,7 +39,7 @@ public class UsuarioDbo {
 
         SQLiteDatabase db = con.getReadableDatabase();
 
-        String columnas[] = new String[] {"nombre","tipo_usuario","identificacion","email","telefono","clave"};//,"estatus"};
+        String columnas[] = new String[] {"id_usuario","nombre","tipo_usuario","identificacion","email","telefono","clave"};//,"estatus"};
 
         Cursor cursor = db.query("usuario", columnas, null, null,null, null,null);
 
@@ -64,6 +63,5 @@ public class UsuarioDbo {
         cursor.close();
         db.close();
         return usuarios;
-
     }
 }
