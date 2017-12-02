@@ -3,6 +3,7 @@ package com.itla.mudat.dao;
 import android.content.*;
 import android.database.*;
 import android.database.sqlite.*;
+import android.util.Log;
 
 import com.itla.mudat.entity.clsUsuario;
 import com.itla.mudat.entity.enumTipoUsuario;
@@ -17,11 +18,10 @@ public class UsuarioDbo {
         con = new DbConnection(context);
     }
 
-    public void crear(clsUsuario user){
+    public void guardar(clsUsuario user){
         SQLiteDatabase db = con.getWritableDatabase();
 
         ContentValues cv = new ContentValues();
-        cv.put("id_usuario", user.getIdUsuario());
         cv.put("nombre", user.getNombre());
         cv.put("tipo_usuario", String.valueOf(user.getTipoUsuario()));
         cv.put("identificacion", user.getIdentificacion());
@@ -30,7 +30,14 @@ public class UsuarioDbo {
         cv.put("clave", user.getClave());
         //cv.put("estatus", user.isEstatus());
 
-        db.insert("usuario", null,cv);
+        if(user.getIdUsuario() == 0){
+            Long id = db.insert("usuario",null,cv);
+        }else{
+            db.update("usuario", cv, "id = "+ user.getIdUsuario(),null);
+        }
+
+       long id = db.insert("usuario", null,cv);
+       Log.i("RegistroUsuario " , "el id generado = " + id);
         db.close();
     }
 

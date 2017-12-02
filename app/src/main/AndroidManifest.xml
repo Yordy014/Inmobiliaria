@@ -16,8 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.Visualizar" />
-        <activity android:name=".view.RegistroUsuario"></activity>
+        <activity android:name=".view.VisualizarUsuarios" />
+        <activity android:name=".view.RegistroUsuario" />
+        <activity android:name=".view.VisualizarAnuncios" />
+        <activity android:name=".view.RegistroAnuncio" />
+        <activity android:name=".view.VisualizarCategorias"></activity>
     </application>
 
 </manifest>

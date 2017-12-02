@@ -1,6 +1,8 @@
 package com.itla.mudat.entity;
 
-public class clsUsuario {
+import java.io.Serializable;
+
+public class clsUsuario implements Serializable {
 
     Integer idUsuario;
     String nombre;

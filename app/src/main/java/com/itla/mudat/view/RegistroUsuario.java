@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.*;
 
 import com.itla.mudat.R;
 import com.itla.mudat.dao.UsuarioDbo;
@@ -28,13 +28,15 @@ public class RegistroUsuario extends AppCompatActivity {
 
     UsuarioDbo usuarioDbo;
 
-   /* public TextView nombre1;
+    public TextView nombre1;
     public TextView telefono1;
     public TextView tipoUsuario1;
     public TextView email1;
     public TextView clave1;
     public TextView estatus1;
-    public TextView identificacion1; */
+    public TextView identificacion1;
+
+   clsUsuario usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,15 +51,23 @@ public class RegistroUsuario extends AppCompatActivity {
         //estatus = findViewById(R.id.txtEstatus);
         telefono = findViewById(R.id.txtTelefono);
 
+        Bundle parametros = getIntent().getExtras();
+
+        if(parametros.getSerializable("usuario") != null){
+            usuario = (clsUsuario) parametros.getSerializable("usuario");
+
+            nombre1.setText(usuario.getNombre());
+        }
+
         usuarioDbo = new UsuarioDbo(this);
 
-       /* nombre1 = findViewById(R.id.textNombre);
+        nombre1 = findViewById(R.id.textNombre);
         identificacion1 = findViewById(R.id.textIdentificacion);
         tipoUsuario1 = findViewById(R.id.textTipoUsuario);
         email1 = findViewById(R.id.textEmail);
         clave1 = findViewById(R.id.textClave);
         estatus1 = findViewById(R.id.textEstatus);
-        telefono1 = findViewById(R.id.textTelefono);*/
+        telefono1 = findViewById(R.id.textTelefono);
 
         final clsUsuario usuario = new clsUsuario();
 
@@ -75,7 +85,7 @@ public class RegistroUsuario extends AppCompatActivity {
                 usuario.setTelefono(telefono.getText().toString());
 
                 Log.i("Registrando Usuario: ", usuario.toString());
-                usuarioDbo.crear(usuario);
+                usuarioDbo.guardar(usuario);
 
             }
         });
@@ -88,8 +98,9 @@ public class RegistroUsuario extends AppCompatActivity {
 
                 List<clsUsuario> usuarios = usuarioDbo.buscar();
 
+                Log.i("Registrando Usuario: ", "total usuarios = " + usuarios.size());
                 for (clsUsuario u: usuarios){
-                    Log.i("", u.toString());
+                    Log.i("Registrando Usuario: ", u.toString());
                 }
             }
         });

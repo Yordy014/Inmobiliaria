@@ -22,8 +22,5 @@ public class SqlHelperSchema {
                                                                         "fecha TEXT, " +
                                                                         "categoria INTEGER, " +
                                                                         "usuario INTEGER, " +
-                                                                        "ubicacion TEXT, " +
-                                                                        "PRIMARY KEY(`ID_ANUNCIO`), " +
-                                                                        "FOREIGN KEY(categoria) REFERENCES CATEGORIA(id_categoria), " +
-                                                                        "FOREIGN KEY(usuario) REFERENCES USUARIO(id_usuario)";
+                                                                        "ubicacion TEXT)";
 }

@@ -2,7 +2,10 @@
   <dictionary name="MESCyT">
     <words>
       <w>abrir</w>
+      <w>anno</w>
+      <w>anuncios</w>
       <w>boton</w>
+      <w>cantidad</w>
       <w>clave</w>
       <w>estatus</w>
       <w>guardar</w>
@@ -13,9 +16,11 @@
       <w>mundo</w>
       <w>nombre</w>
       <w>parametros</w>
+      <w>registro</w>
       <w>telefono</w>
       <w>tipo</w>
       <w>usuario</w>
+      <w>usuarios</w>
       <w>visualizar</w>
     </words>
   </dictionary>
