@@ -30,14 +30,16 @@ public class UsuarioDbo {
         cv.put("clave", user.getClave());
         //cv.put("estatus", user.isEstatus());
 
-        if(user.getIdUsuario() == 0){
+        db.insert("usuario",null,cv);
+
+        /*if(user.getIdUsuario() == 0){
             Long id = db.insert("usuario",null,cv);
         }else{
             db.update("usuario", cv, "id = "+ user.getIdUsuario(),null);
-        }
+        }*/
 
-       long id = db.insert("usuario", null,cv);
-       Log.i("RegistroUsuario " , "el id generado = " + id);
+       /*long id = db.insert("usuario", null,cv);
+       Log.i("RegistroUsuario " , "el id generado = " + id);*/
         db.close();
     }
 

@@ -34,7 +34,6 @@ public class VisualizarUsuarios extends AppCompatActivity {
         nombre1.setText(ver);*/
 
         registro = findViewById(R.id.btnRegistroUsuario);
-
         registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

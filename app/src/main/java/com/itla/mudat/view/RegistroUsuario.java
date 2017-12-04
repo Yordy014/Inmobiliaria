@@ -51,7 +51,7 @@ public class RegistroUsuario extends AppCompatActivity {
         //estatus = findViewById(R.id.txtEstatus);
         telefono = findViewById(R.id.txtTelefono);
 
-        Bundle parametros = getIntent().getExtras();
+        /*Bundle parametros = getIntent().getExtras();
 
         if(parametros.getSerializable("usuario") != null){
             usuario = (clsUsuario) parametros.getSerializable("usuario");
@@ -67,7 +67,7 @@ public class RegistroUsuario extends AppCompatActivity {
         email1 = findViewById(R.id.textEmail);
         clave1 = findViewById(R.id.textClave);
         estatus1 = findViewById(R.id.textEstatus);
-        telefono1 = findViewById(R.id.textTelefono);
+        telefono1 = findViewById(R.id.textTelefono);*/
 
         final clsUsuario usuario = new clsUsuario();
 
